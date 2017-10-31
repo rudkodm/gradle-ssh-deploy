@@ -1,0 +1,21 @@
+apply plugin: 'groovy'
+
+
+repositories {
+    jcenter()
+}
+
+configurations.compile {
+    exclude module: 'groovy-all'
+}
+
+dependencies {
+    compile(
+            gradleApi(),
+            'org.slf4j:slf4j-api:1.7.25'
+    )
+    testCompile(
+            'junit:junit:4.12',
+            "org.spockframework:spock-core:1.0-groovy-2.4"
+    )
+}
